@@ -185,6 +185,7 @@ class GlitchShader extends FlxShader
 
     void main()
     {
+        #pragma body
         vec2 uv = sineWave(openfl_TextureCoordv);
         gl_FragColor = texture2D(bitmap, uv);
     }')
@@ -208,6 +209,7 @@ class InvertShader extends FlxShader
 
     void main()
     {
+        #pragma body
         vec2 uv = openfl_TextureCoordv;
         gl_FragColor = sineWave(texture2D(bitmap, uv));
     }')
@@ -264,6 +266,7 @@ class DistortBGShader extends FlxShader
 
     void main()
     {
+        #pragma body 
         vec2 uv = sineWave(openfl_TextureCoordv);
         gl_FragColor = makeBlack(texture2D(bitmap, uv)) + texture2D(bitmap,openfl_TextureCoordv);
     }')
@@ -319,6 +322,7 @@ class PulseShader extends FlxShader
 
     void main()
     {
+       #pragma body
         vec2 uv = openfl_TextureCoordv;
         gl_FragColor = sineWave(texture2D(bitmap, uv),uv);
     }')
